@@ -57,64 +57,61 @@
         </section>
 
         <!-----feature-->
-        <section class="beature">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img alt="yyy" src="s9mgye9e-removebg-preview 12.png" class="due">
-                    </div>
-                    <div class="col-md-4">
-                        <h2>Begin<br> your awesome <br> journey </h2>
-                        <p>Looking for the perfect home to rent? Our user-friendly
-                            house rental website makes your search a breeze.Browse through a diverse range
-                            listings, From cozy apartments to spacious family houses
-                            With clear for a vivid and handy filters, finding your ideal rental is
-                            just a click away. </p>
-                        <a href="#">Continue</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
+      <section class="beature">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 hidden">
+        <img alt="yyy" src="s9mgye9e-removebg-preview 12.png" class="due">
+      </div>
+      <div class="col-md-4 hidden">
+        <h2>Begin<br> your awesome <br> journey </h2>
+        <p>
+          Looking for the perfect home to rent? Our user-friendly
+          house rental website makes your search a breeze. Browse through a diverse range
+          of listings, from cozy apartments to spacious family houses.
+          With clear and handy filters, finding your ideal rental is
+          just a click away.
+        </p>
+        <a href="#">Continue</a>
+      </div>
+    </div>
+  </div>
+</section>
 
         <!----services---->
 
-        <section class="Services">
-            <div class="container">
-                <h1 class="title">See Our Services</h1>
-                <p class="subtitle">We Make Finding Rentals Easy, Effortless Search, Endless Choices. </p>
-                <div class="rows">
-                    <div class="col-md-1">
-                        <div class="service-box">
-                            <img alt="yyyy" src="edth.png">
-                            <h4>RESPONSIVE</h4>
-                            <p>Our commitment to being responsive<br>means that your concerns and efficient.</p>
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="service-box">
-                            <img alt="rrr" src="djyuoi.png">
-                            <h4>GREEN</h4>
-                            <p>Experience the convenience of our<br> responsive platform, ensuring swift<br>
-                                communication.
-                            </p>
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="service-box">
-                            <img alt="fff" src="jkh.png">
-                            <h4>SECURITY</h4>
-                            <p>Ensuring swift communication<br> and quick solutions for all your<br> rental needs.</p>
-                            <i class="fa fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
+    <section class="Services">
+  <div class="container">
+    <h1 class="title">See Our Services</h1>
+    <p class="subtitle">We Make Finding Rentals Easy, Effortless Search, Endless Choices.</p>
+  <div class="rows">
+  <div class="col-md-1 fade-up">
+    <div class="service-box">
+      <img alt="yyyy" src="edth.png">
+      <h4>RESPONSIVE</h4>
+      <p>Our commitment to being responsive<br>means that your concerns and efficient.</p>
+      <i class="fa fa-arrow-right"></i>
+    </div>
+  </div>
+  <div class="col-md-2 fade-up">
+    <div class="service-box">
+      <img alt="rrr" src="djyuoi.png">
+      <h4>GREEN</h4>
+      <p>Experience the convenience of our<br>responsive platform, ensuring swift<br>communication.</p>
+      <i class="fa fa-arrow-right"></i>
+    </div>
+  </div>
+  <div class="col-md-3 fade-up">
+    <div class="service-box">
+      <img alt="fff" src="jkh.png">
+      <h4>SECURITY</h4>
+      <p>Ensuring swift communication<br>and quick solutions for all your<br>rental needs.</p>
+      <i class="fa fa-arrow-right"></i>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
 
 
         <section class="Reviews">
@@ -215,6 +212,35 @@
             }
         });
     </script>
+
+    <script>
+  const hiddenElements = document.querySelectorAll('.hidden');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  hiddenElements.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  const fadeUps = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  fadeUps.forEach(el => observer.observe(el));
+</script>
+
 </body>
 
 </html>

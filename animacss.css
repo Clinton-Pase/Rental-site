@@ -99,6 +99,7 @@ nav ul li a:hover::before {
 .text-box {
     padding: 1.5rem 3rem;
     margin-top: 1.5rem;
+     animation: slideInLeft 1.2s ease-out;
 }
 
 .text-box h1 {
@@ -156,6 +157,7 @@ nav ul li a:hover::before {
 .image {
     margin-top: 3rem;
     margin-left: 2rem;
+    animation: slideInRight 1.2s ease-out;
 }
 
 .feature-img {
@@ -336,6 +338,25 @@ nav ul li a:hover::before {
     font-weight: 200;
 }
 
+/* ===== Hover animation for service cards ===== */
+.Services .rows > div {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+.Services .rows > div:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  background-color: #31783a; /* slightly lighter green */
+}
+
+.service-box img {
+  transition: transform 0.4s ease;
+}
+
+.Services .rows > div:hover img {
+  transform: scale(1.05);
+}
+
 .Reviews {
 
     min-height: 90vh;
@@ -491,6 +512,28 @@ nav ul li a:hover::before {
     font-size: 0.8rem;
 }
 
+/* Smooth hover tilt for review cards */
+.info .service-box1,
+.info .service-box2,
+.info .service-box3 {
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+}
+
+/* Hover tilt effect */
+.info .service-box1:hover,
+.info .service-box2:hover,
+.info .service-box3:hover {
+  transform: perspective(800px) rotateX(6deg) rotateY(-6deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-color: #0b8f4a; /* optional: brighten border */
+}
+
+/* Optional: make the section slightly 3D responsive */
+.Reviews {
+  perspective: 1000px;
+}
+
 
 footer {
     min-height: 20vh;
@@ -555,6 +598,8 @@ footer hr {
 .below ul li:hover {
     color: rgb(250, 27, 120);
 }
+
+
 
 @media (max-width: 1200px) and (min-width: 150px) {
 
@@ -1065,3 +1110,73 @@ footer hr {
                 margin-left: auto;
             }
         }
+
+        /* Fade and slide in from the left (for text) */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade and slide in from the right (for image) */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Start hidden */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When visible */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.col-md-6.show {
+  animation: fadeSlideLeft 1s ease-out forwards;
+}
+
+.col-md-4.show {
+  animation: fadeSlideRight 1s ease-out forwards;
+}
+
+
+
